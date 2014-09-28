@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20140917071509) do
     t.datetime "updated_at"
   end
 
+  add_index "posts", ["title"], name: "index_posts_on_title", unique: true
+
   create_table "users", force: true do |t|
     t.string   "name",                   default: "", null: false
     t.string   "email",                  default: "", null: false

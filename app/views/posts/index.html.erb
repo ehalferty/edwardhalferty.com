@@ -1,5 +1,6 @@
 <h1>Listing posts</h1>
 
+<%= @posts.count %>
 <table>
   <thead>
     <tr>
@@ -23,6 +24,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @posts %>
 
 <br>
 
