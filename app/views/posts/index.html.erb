@@ -1,15 +1,8 @@
-<ul>
+<ul class="posts-list">
   <% @posts.each do |post| %>
     <li>
-      <span class="post-date"><%= l post.created_at, format: :post %></span>
-      <%= link_to post.title, post %>
-      <% if is_admin? %>
-          <div class="admin-actions">
-            <%= post.status %>
-            <%= link_to 'Edit', edit_post_path(post) %>
-            <%= link_to 'Destroy', post, method: :delete, data: {confirm: 'Are you sure?'} %>
-          </div>
-      <% end %>
+      <span class="post-date"><%= l post.created_at, format: :post %> »</span>
+      <%= link_to post.title, post, class: "post-link" %>
     </li>
   <% end %>
 </ul>
