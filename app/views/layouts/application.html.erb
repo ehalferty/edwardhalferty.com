@@ -7,16 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if (signed_in?) %>
-    <p>
-      Signed in as <%= current_user.name %> <%= is_admin? ? '<<admin>>' : '<<non-admin>>' %>
+  <div class="login-header">
+    <% if signed_in? %>
+      Signed in as <%= current_user.name %>
       <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
-    </p>
-<% else %>
-    <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
-<% end %>
-
-<%= yield %>
-
+    <% else %>
+      <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
+    <% end %>
+    <% if is_admin? %><%= link_to 'New Post', new_post_path %><% end %>
+  </div>
+  <div class="page-holder">
+    <%= yield %>
+  </div>
 </body>
 </html>

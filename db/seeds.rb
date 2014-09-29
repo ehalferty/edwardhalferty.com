@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+content = <<EOF
+<h1>Test post!!!</h1>
+<p>hi there!!</p>
+EOF
+
+(1..100).each do |i|
+  ["published", "draft"].each do |s|
+    Post.create title: s.capitalize + " Post #" + i.to_s.rjust(2, "0"),
+                status: s,
+                content: "asdf",
+                created_at: rand(3.years.ago..Time.now)
+  end
+end
+
