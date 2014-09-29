@@ -21,5 +21,12 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  pool: 10
+  timeout: 5000
+  database: rails
+  username: rails
+  password: <%= ENV["MYSQL_RAILS_PASSWORD"] %>
+  socket: /var/run/mysqld/mysqld.sock
+  reconnect: true

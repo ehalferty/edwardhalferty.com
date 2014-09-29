@@ -47,6 +47,10 @@ group :development do
   gem 'binding_of_caller'
 end
 
+group :production do
+  gem 'mysql2'
+end
+
 gem 'andand'
 
 gem 'kaminari'
