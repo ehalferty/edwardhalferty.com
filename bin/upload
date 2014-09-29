@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rsync -av --exclude '.git/' edwardhalferty.com:/home/rails/
+rsync -av --exclude '.git/' ./ edwardhalferty.com:/home/rails/
 
