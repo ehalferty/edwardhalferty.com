@@ -55,3 +55,5 @@ gem 'andand'
 
 gem 'kaminari'
 
+gem 'tinymce-rails'
+
