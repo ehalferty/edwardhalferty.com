@@ -9,7 +9,7 @@
 Post.delete_all
 
 content = <<EOF
-<h1>Test post!!!</h1>
+<p>Test post!!!</p>
 <p>hi there!! <a href="http://www.google.com">link</a></p>
 EOF
 
