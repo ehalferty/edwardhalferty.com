@@ -1,7 +1,7 @@
 <!-- Init tinymce -->
 <%= tinymce %>
 
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, :html => { :multipart => true }) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -26,6 +26,12 @@
     <%= f.label :status %><br>
     <%= f.select :status, ["draft", "published"] %>
   </div>
+  <%= f.fields_for :post_attachments do |p| %>
+    <div class="field">
+      <%= p.label :image %><br>
+      <%= p.file_field :image, :multiple => true, name: "post_attachments[image][]" %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

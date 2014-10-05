@@ -2,6 +2,9 @@
 
 <div class="post-title"><%= link_to 'Blog', posts_path %> » <%= l @post.created_at, format: :post %> » <%= @post.title %></div>
 <div class="post-content"><%= @post.content.html_safe %></div>
+<% @post_attachments.each do |p| %>
+  <%= image_tag p.image_url %>
+<% end %>
 
 <% if is_admin? %>
   <p>

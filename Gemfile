@@ -57,3 +57,5 @@ gem 'kaminari'
 
 gem 'tinymce-rails'
 
+gem 'carrierwave'
+
