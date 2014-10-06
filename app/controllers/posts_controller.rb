@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    raise "Unauthorized user" unless (is_admin? || @post.status == "published")
   end
 
   # GET /posts/new
